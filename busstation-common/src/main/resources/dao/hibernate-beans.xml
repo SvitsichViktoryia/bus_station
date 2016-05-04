@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       		 			http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+         	 			http://www.springframework.org/schema/context 
+         	 			http://www.springframework.org/schema/context/spring-context-4.1.xsd
+         	 			http://www.springframework.org/schema/tx
+        	 			http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+						">
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>by.bsuir.busstation.entity.Driver</value>
+				<value>by.bsuir.busstation.entity.Bus</value>
+				<value>by.bsuir.busstation.entity.Place</value>
+				<value>by.bsuir.busstation.entity.Role</value>
+				<value>by.bsuir.busstation.entity.Route</value>
+				<value>by.bsuir.busstation.entity.Ticket</value>
+				<value>by.bsuir.busstation.entity.User</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="hibernateUtils" class="by.bsuir.busstation.utils.HibernateUtils">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+	
+	<bean id="busDao" class = "by.bsuir.busstation.dao.impl.IBusDaoImpl"/>
+	<bean id="driverDao" class = "by.bsuir.busstation.dao.impl.IDriverDaoImpl"/>
+	<bean id="placeDao" class = "by.bsuir.busstation.dao.impl.IPlaceDaoImpl"/>
+	<bean id="routeDao" class = "by.bsuir.busstation.dao.impl.IRouteDaoImpl"/>
+	<bean id="ticketDao" class = "by.bsuir.busstation.dao.impl.ITicketDaoImpl"/>
+	<bean id="userDao" class = "by.bsuir.busstation.dao.impl.IUserDaoImpl"/>
+</beans>
+	
