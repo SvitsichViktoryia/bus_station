@@ -2,8 +2,6 @@ package by.bsuir.busstation.entity;
 
 import org.junit.Test;
 
-import java.util.Set;
-
 import static org.junit.Assert.*;
 
 /**

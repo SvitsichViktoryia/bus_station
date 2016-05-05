@@ -16,7 +16,7 @@ public class IBusServiceImpl implements IBusService {
 
 	private static final Logger LOG = LoggerFactory.getLogger(IBusService.class);
 
-	@Autowired
+	@Autowired(required = true)
 	private IBusDao busDao;
 
 	@Override

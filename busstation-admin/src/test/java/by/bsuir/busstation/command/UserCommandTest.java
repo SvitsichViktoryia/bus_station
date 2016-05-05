@@ -1,19 +1,13 @@
 package by.bsuir.busstation.command;
 
-import by.bsuir.busstation.dao.IUserDao;
 import by.bsuir.busstation.entity.User;
 import by.bsuir.busstation.service.IUserService;
-import by.bsuir.busstation.service.impl.IBusServiceImpl;
-import by.bsuir.busstation.service.impl.IUserServiceImpl;
-import org.hibernate.mapping.Set;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 ;
-import org.springframework.context.annotation.Role;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import static org.junit.Assert.*;
 

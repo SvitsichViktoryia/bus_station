@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 public class HibernateUtils {
+
 	private final SessionFactory sessionFactory;
 
 	public HibernateUtils(SessionFactory sessionFactory) {

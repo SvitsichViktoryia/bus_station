@@ -7,7 +7,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import by.bsuir.busstation.entity.Driver;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import by.bsuir.busstation.entity.Place;

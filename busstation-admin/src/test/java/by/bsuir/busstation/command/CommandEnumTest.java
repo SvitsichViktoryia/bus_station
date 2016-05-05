@@ -2,8 +2,6 @@ package by.bsuir.busstation.command;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by Виктория on 03.05.2016.
  */

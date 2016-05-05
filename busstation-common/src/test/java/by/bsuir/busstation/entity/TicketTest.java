@@ -35,6 +35,5 @@ public class TicketTest {
     public void testGetStatus() throws Exception {
         ticket.setStatus(true);
         assertTrue(ticket.getStatus());
-
     }
 }
